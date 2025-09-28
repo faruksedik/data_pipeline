@@ -34,7 +34,8 @@ data_pipeline/
 
 3. **Monitoring (`monitor.sh`)**  
    - Scans `preprocess.log` for errors using key words like: (`ERROR` or `failed`)  
-   - Writes findings into `logs/monitor_summary.log`  
+   - Writes findings into `logs/monitor_summary.log`
+   - Prints findings to the terminal. 
 
 4. **Automation with Cron Jobs**  
    - `preprocess.sh` runs daily at **12:00 AM**  
