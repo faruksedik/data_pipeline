@@ -8,22 +8,22 @@ It covers file manipulation, automation with cron jobs, permissions, and logging
 ## Project Structure
 ```
 data_pipeline/
-├── input/                    # Raw input CSV files
-│   └── sales_data.csv
-├── output/                   # Cleaned output files
-│   └── cleaned_sales_data.csv
-├── logs/                     # Log files for monitoring
-│   ├── preprocess.log
-│   └── monitor_summary.log
-├── preprocess.sh             # Data cleaning script
-└── monitor.sh                # Log monitoring script
+   input/                    # Raw input CSV files
+      sales_data.csv
+   output/                   # Cleaned output files
+      cleaned_sales_data.csv
+   logs/                     # Log files for monitoring
+      preprocess.log
+      monitor_summary.log
+   preprocess.sh             # Data cleaning script
+   monitor.sh                # Log monitoring script
 ```
 
 ---
 
 ## Features
 1. **Data Ingestion**  
-   - Place your raw `sales_data.csv` into `input/`.
+   - Place the raw `sales_data.csv` into `input/`.
 
 2. **Data Preprocessing (`preprocess.sh`)**  
    - Removes the last column (`extra_col`)  
@@ -122,13 +122,22 @@ crontab -l
 ---
 
 ## Permissions & Security
-- Input folder: writable only by your user.
+- Input folder: Writable only by user (Owner of the directory).
+     - For the owner (you): rwx (read, write and execute)
+     - For the group:       --- (no permission)
+     - For others:          --- (no permission)
+- Use the command below:
   ```bash
   chmod 700 ~/data_pipeline/input
   ```
-- Logs folder: readable only by authorized users.
+  
+- Logs folder: Readable only by authorized users (Owner and members in your group).
+     - For the owner (you): rw- (read and write)
+     - For the group:       r-- (read only)
+     - For others:          --- (no permission)
+- Use the command below:
   ```bash
-  chmod 600 ~/data_pipeline/logs/*
+  chmod 640 ~/data_pipeline/logs/*
   ```
 
 ---
