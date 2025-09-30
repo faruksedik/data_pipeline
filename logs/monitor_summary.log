@@ -2,3 +2,8 @@
 Tue Sep 30 22:21:48 CEST 2025: Starting log monitoring
 Tue Sep 30 22:21:48 CEST 2025: Errors found in preprocess.log
 Tue Sep 30 22:02:45 CEST 2025: ERROR - Input file not found: /home/faruksedik/data_pipeline/input/sales_data.csv
+==============================
+Tue Sep 30 22:58:34 CEST 2025: Starting log monitoring
+Tue Sep 30 22:58:34 CEST 2025: Errors found in preprocess.log
+Tue Sep 30 22:02:45 CEST 2025: ERROR - Input file not found: /home/faruksedik/data_pipeline/input/sales_data.csv
+Tue Sep 30 22:39:40 CEST 2025: ERROR - awk processing failed

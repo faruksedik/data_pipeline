@@ -30,11 +30,11 @@ awk -F',' 'NR==1 {
 }
 {
     # Remove last column
-    last_field=$NF; $NF="";
+    $NF="";
     sub(/,$/, "");
     
     # Keep only rows where status != "Failed"
-    if ($(NF) != "Failed") {
+    if ($NF != "Failed") {
         print
     }
 }' OFS=',' "$INPUT" > "$OUTPUT"
