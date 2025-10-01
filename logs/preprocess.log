@@ -40,3 +40,8 @@ Tue Sep 30 22:56:06 CEST 2025: Input file found: /home/faruksedik/data_pipeline/
 Tue Sep 30 22:56:06 CEST 2025: Successfully cleaned file. Saved at /home/faruksedik/data_pipeline/output/cleaned_sales_data.csv
 Tue Sep 30 22:56:06 CEST 2025: Preprocessing completed successfully
 ==============================
+==============================
+Wed Oct  1 00:00:01 CEST 2025: Starting preprocessing job
+Wed Oct  1 00:00:01 CEST 2025: Output file already exists: /home/faruksedik/data_pipeline/output/cleaned_sales_data.csv
+Wed Oct  1 00:00:01 CEST 2025: No need to clean data. Skipping preprocessing.
+==============================
