@@ -121,15 +121,40 @@ crontab -l
 
 ---
 
-## Permissions & Security
-- Input folder: writable only by your user.
-  ```bash
-  chmod 700 ~/data_pipeline/input
-  ```
-- Logs folder: readable only by authorized users.
-  ```bash
-  chmod 600 ~/data_pipeline/logs/*
-  ```
+# Permissions and Security Setup
+
+Since I don't have `sudo` privileges, I cannot create or manage groups directly.  
+Instead, I assumed that the **default group already assigned to my user** is the "authorized users" group.
+
+---
+
+## 1. Apply Permissions
+
+### Allow group members to read & enter the folders, but not write/delete
+```bash
+chmod 750 ~/data_pipeline ~/data_pipeline/logs
+```
+
+### Restrict the input folder (only the owner can use it)
+```bash
+chmod 700 ~/data_pipeline/input
+```
+
+### Make log files read-only for group (owner can read/write, group can read only, others none)
+```bash
+chmod 640 ~/data_pipeline/logs/*
+```
+
+---
+
+## 2. Resulting Access Control
+
+- **Owner (me):** full access (read, write, execute)
+- **Authorized users (default group):**  
+  - Can enter `~/data_pipeline` and `~/data_pipeline/logs`  
+  - Can read files in logs  
+  - Cannot modify or delete anything  
+- **Others:** no access
 
 ---
 
